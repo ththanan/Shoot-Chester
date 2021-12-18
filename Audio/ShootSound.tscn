@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Audio/sfx_wpn_dagger.wav" type="AudioStream" id=1]
+[ext_resource path="res://Audio/ShootSound.gd" type="Script" id=2]
+
+[node name="ShootSound" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+area_mask = 0

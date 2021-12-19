@@ -1,0 +1,800 @@
+[gd_scene load_steps=79 format=2]
+
+[ext_resource path="res://Player/PlayerEnd.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tileset/Tilesets.tres" type="TileSet" id=2]
+[ext_resource path="res://Decorate/fonts.png" type="Texture" id=3]
+[ext_resource path="res://Decorate/T.png" type="Texture" id=4]
+[ext_resource path="res://Decorate/G.png" type="Texture" id=5]
+[ext_resource path="res://Decorate/R.png" type="Texture" id=6]
+[ext_resource path="res://Decorate/N.png" type="Texture" id=7]
+[ext_resource path="res://Decorate/A.png" type="Texture" id=8]
+[ext_resource path="res://Decorate/O.png" type="Texture" id=9]
+[ext_resource path="res://Decorate/C.png" type="Texture" id=10]
+[ext_resource path="res://Decorate/S.png" type="Texture" id=11]
+[ext_resource path="res://EndScene/HomeButtonUp.png" type="Texture" id=12]
+[ext_resource path="res://EndScene/HomeLight.png" type="Texture" id=13]
+[ext_resource path="res://EndScene/8.png" type="Texture" id=14]
+[ext_resource path="res://Level/End.gd" type="Script" id=15]
+[ext_resource path="res://EndScene/HomeButtonDown.png" type="Texture" id=16]
+[ext_resource path="res://EndScene/HomeButtonHover.png" type="Texture" id=17]
+[ext_resource path="res://Water/WaterRed.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Water/WaterBlue.tscn" type="PackedScene" id=19]
+[ext_resource path="res://EndScene/Table.png" type="Texture" id=20]
+[ext_resource path="res://EndScene/Chair1.png" type="Texture" id=21]
+[ext_resource path="res://EndScene/Plant2.png" type="Texture" id=22]
+[ext_resource path="res://EndScene/Plant1.png" type="Texture" id=23]
+[ext_resource path="res://EndScene/Tree1.png" type="Texture" id=24]
+[ext_resource path="res://EndScene/Fireplace.png" type="Texture" id=25]
+[ext_resource path="res://EndScene/Sofa.png" type="Texture" id=26]
+[ext_resource path="res://EndScene/SideTable.png" type="Texture" id=27]
+[ext_resource path="res://EndScene/FlowerPink.png" type="Texture" id=28]
+[ext_resource path="res://EndScene/FlowerOrange.png" type="Texture" id=29]
+[ext_resource path="res://EndScene/fire2.png" type="Texture" id=30]
+[ext_resource path="res://EndScene/fire1.png" type="Texture" id=31]
+[ext_resource path="res://EndScene/fire3.png" type="Texture" id=32]
+[ext_resource path="res://EndScene/fire6.png" type="Texture" id=33]
+[ext_resource path="res://EndScene/Tree2.png" type="Texture" id=34]
+[ext_resource path="res://EndScene/CarpetRed.png" type="Texture" id=35]
+[ext_resource path="res://EndScene/CarpetBlue.png" type="Texture" id=36]
+[ext_resource path="res://EndScene/CarpetGreen.png" type="Texture" id=37]
+[ext_resource path="res://EndScene/TableFlowers.png" type="Texture" id=38]
+[ext_resource path="res://EndScene/TableMid.png" type="Texture" id=39]
+[ext_resource path="res://EndScene/TableBooks.png" type="Texture" id=40]
+[ext_resource path="res://EndScene/fire4.png" type="Texture" id=41]
+[ext_resource path="res://EndScene/fire5.png" type="Texture" id=42]
+[ext_resource path="res://EndScene/TableLong.png" type="Texture" id=43]
+[ext_resource path="res://EndScene/elf_f_idle_anim_f2.png" type="Texture" id=44]
+[ext_resource path="res://EndScene/elf_f_idle_anim_f0.png" type="Texture" id=45]
+[ext_resource path="res://EndScene/elf_f_idle_anim_f1.png" type="Texture" id=46]
+[ext_resource path="res://EndScene/elf_f_idle_anim_f3.png" type="Texture" id=47]
+[ext_resource path="res://EndScene/knight_m_idle_anim_f0.png" type="Texture" id=48]
+[ext_resource path="res://EndScene/knight_m_idle_anim_f3.png" type="Texture" id=49]
+[ext_resource path="res://EndScene/knight_m_idle_anim_f2.png" type="Texture" id=50]
+[ext_resource path="res://EndScene/knight_m_idle_anim_f1.png" type="Texture" id=51]
+[ext_resource path="res://EndScene/lizard_f_idle_anim_f2.png" type="Texture" id=52]
+[ext_resource path="res://EndScene/lizard_f_idle_anim_f3.png" type="Texture" id=53]
+[ext_resource path="res://EndScene/lizard_f_idle_anim_f1.png" type="Texture" id=54]
+[ext_resource path="res://EndScene/lizard_f_idle_anim_f0.png" type="Texture" id=55]
+[ext_resource path="res://EndScene/wizzard_m_idle_anim_f1.png" type="Texture" id=56]
+[ext_resource path="res://EndScene/wizzard_m_idle_anim_f2.png" type="Texture" id=57]
+[ext_resource path="res://EndScene/wizzard_m_idle_anim_f3.png" type="Texture" id=58]
+[ext_resource path="res://EndScene/wizzard_m_idle_anim_f0.png" type="Texture" id=59]
+[ext_resource path="res://Audio/WinSound.tscn" type="PackedScene" id=60]
+[ext_resource path="res://Audio/ButtonSound.tscn" type="PackedScene" id=61]
+[ext_resource path="res://Audio/EndingSound.tscn" type="PackedScene" id=62]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 15, 6 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.5, 10 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 4.0
+height = 0.0
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 14.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 14.5, 9.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 14.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5, 4 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 5.75, 11.5 )
+
+[sub_resource type="CapsuleShape2D" id=15]
+radius = 5.0
+height = 0.0
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ ExtResource( 59 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 45 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 4.0
+height = 0.0
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 48 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 5.0
+height = 0.0
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 55 ), ExtResource( 54 ), ExtResource( 52 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[node name="End" type="Node"]
+script = ExtResource( 15 )
+
+[node name="FloorTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -524294, 0, 0, -524293, 0, 0, -524292, 0, 0, -524291, 0, 0, -524290, 0, 0, -524289, 0, 0, -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -458759, 0, 0, -458758, 0, 0, -458757, 0, 0, -458756, 0, 0, -458755, 0, 0, -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -393224, 0, 0, -393223, 0, 0, -393222, 0, 0, -393221, 0, 0, -393220, 0, 0, -393219, 0, 0, -393218, 0, 0, -393217, 0, 0, -458752, 0, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -327693, 0, 0, -327692, 0, 0, -327691, 0, 0, -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -393206, 0, 0, -393205, 0, 0, -393204, 0, 0, -262157, 0, 0, -262156, 0, 0, -262155, 0, 0, -262154, 0, 0, -262153, 0, 0, -262152, 0, 0, -262151, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 0, 0, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -196621, 0, 0, -196620, 0, 0, -196619, 0, 0, -196618, 0, 0, -196617, 0, 0, -196616, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -131085, 0, 0, -131084, 0, 0, -131083, 0, 0, -131082, 0, 0, -131081, 0, 0, -131080, 0, 0, -131079, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -65549, 0, 0, -65548, 0, 0, -65547, 0, 0, -65546, 0, 0, -65545, 0, 0, -65544, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -13, 0, 0, -12, 0, 0, -11, 0, 0, -10, 0, 0, -9, 0, 0, -8, 0, 0, -7, 0, 0, -6, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, 65523, 0, 0, 65524, 0, 0, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0 )
+
+[node name="WallTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+collision_mask = 2
+format = 1
+tile_data = PoolIntArray( -655366, 30, 0, -655365, 37, 0, -655364, 37, 0, -655363, 23, 0, -655362, 37, 0, -655361, 37, 0, -720896, 37, 0, -720895, 37, 0, -720894, 23, 0, -720893, 37, 0, -720892, 37, 0, -720891, 31, 0, -589831, 30, 0, -589830, 10, 0, -589829, 13, 0, -589828, 13, 0, -589827, 24, 0, -589826, 13, 0, -589825, 13, 0, -655360, 13, 0, -655359, 13, 0, -655358, 24, 0, -655357, 13, 0, -655356, 13, 0, -655355, 11, 0, -655354, 31, 0, -524296, 30, 0, -524295, 10, 0, -524294, 44, 0, -524291, 27, 0, -589822, 27, 0, -589819, 43, 0, -589818, 11, 0, -589817, 31, 0, -458765, 30, 0, -458764, 37, 0, -458763, 37, 0, -458762, 37, 0, -458761, 37, 0, -458760, 10, 0, -458759, 44, 0, -524282, 43, 0, -524281, 11, 0, -524280, 37, 0, -524279, 37, 0, -524278, 37, 0, -524277, 37, 0, -524276, 31, 0, -393229, 10, 0, -393228, 13, 0, -393227, 13, 0, -393226, 13, 0, -393225, 13, 0, -393224, 42, 0, -458745, 41, 0, -458744, 13, 0, -458743, 13, 0, -458742, 13, 0, -458741, 13, 0, -458740, 11, 0, -327693, 42, 0, -327688, 42, 0, -393209, 41, 0, -393204, 41, 0, -262157, 42, 0, -262152, 42, 0, -327673, 41, 0, -327668, 41, 0, -196621, 42, 0, -196616, 42, 0, -262137, 41, 0, -262132, 41, 0, -131085, 42, 0, -131080, 42, 0, -196601, 41, 0, -196596, 41, 0, -65549, 42, 0, -65544, 42, 0, -131065, 41, 0, -131060, 41, 0, -13, 42, 0, -8, 42, 0, -65529, 41, 0, -65524, 41, 0, 65523, 28, 0, 65524, 37, 0, 65525, 37, 0, 65526, 37, 0, 65527, 37, 0, 65528, 28, 0, 65529, 37, 0, 65530, 37, 0, 65531, 37, 0, 65532, 37, 0, 65533, 37, 0, 65534, 37, 0, 65535, 37, 0, 0, 37, 0, 1, 37, 0, 2, 37, 0, 3, 37, 0, 4, 37, 0, 5, 37, 0, 6, 37, 0, 7, 29, 0, 8, 37, 0, 9, 37, 0, 10, 37, 0, 11, 37, 0, 12, 29, 0, 131059, 12, 0, 131060, 13, 0, 131061, 13, 0, 131062, 13, 0, 131063, 13, 0, 131064, 13, 0, 131065, 13, 0, 131066, 13, 0, 131067, 13, 0, 131068, 13, 0, 131069, 13, 0, 131070, 13, 0, 131071, 13, 0, 65536, 13, 0, 65537, 13, 0, 65538, 13, 0, 65539, 13, 0, 65540, 13, 0, 65541, 13, 0, 65542, 13, 0, 65543, 12, 0, 65544, 13, 0, 65545, 13, 0, 65546, 13, 0, 65547, 13, 0, 65548, 14, 0 )
+
+[node name="WaterBlue2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 144, -104 )
+
+[node name="WaterBlue5" parent="." instance=ExtResource( 19 )]
+position = Vector2( 184, -104 )
+
+[node name="WaterBlue3" parent="." instance=ExtResource( 19 )]
+position = Vector2( -184, -104 )
+
+[node name="WaterBlue4" parent="." instance=ExtResource( 19 )]
+position = Vector2( -144, -104 )
+
+[node name="WaterRed" parent="." instance=ExtResource( 18 )]
+position = Vector2( -72, -152 )
+
+[node name="WaterRed2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 72, -152 )
+
+[node name="CarpetRed" type="Sprite" parent="."]
+position = Vector2( 0, -40 )
+scale = Vector2( 1.40985, 1.40985 )
+texture = ExtResource( 35 )
+
+[node name="CarpetBlue" type="Sprite" parent="."]
+position = Vector2( -72, -40 )
+scale = Vector2( 1.40985, 1.40985 )
+texture = ExtResource( 36 )
+
+[node name="CarpetGreen" type="Sprite" parent="."]
+position = Vector2( 72, -40 )
+scale = Vector2( 1.40985, 1.40985 )
+texture = ExtResource( 37 )
+
+[node name="Fireplace" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireplace"]
+position = Vector2( 0, -138 )
+shape = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Fireplace"]
+position = Vector2( 0, -154 )
+texture = ExtResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Fireplace"]
+position = Vector2( -1, -149 )
+frames = SubResource( 9 )
+animation = "Idle"
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Table" type="StaticBody2D" parent="YSort"]
+visible = false
+position = Vector2( -152, -56 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Table"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="YSort/Table"]
+texture = ExtResource( 20 )
+
+[node name="Table2" type="StaticBody2D" parent="YSort"]
+visible = false
+position = Vector2( -152, -16 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Table2"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Table2"]
+texture = ExtResource( 20 )
+
+[node name="Table3" type="StaticBody2D" parent="YSort"]
+visible = false
+position = Vector2( 152, -56 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Table3"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Table3"]
+texture = ExtResource( 20 )
+
+[node name="Table4" type="StaticBody2D" parent="YSort"]
+visible = false
+position = Vector2( 152, -16 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Table4"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Table4"]
+texture = ExtResource( 20 )
+
+[node name="Tree1" type="StaticBody2D" parent="YSort"]
+position = Vector2( -99, -130 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree1"]
+position = Vector2( 0, 8 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Tree1"]
+texture = ExtResource( 24 )
+
+[node name="Tree2" type="StaticBody2D" parent="YSort"]
+position = Vector2( -116, -112 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree2"]
+position = Vector2( 0, 8 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Tree2"]
+texture = ExtResource( 34 )
+
+[node name="Tree3" type="StaticBody2D" parent="YSort"]
+position = Vector2( 100, -130 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree3"]
+position = Vector2( 0, 8 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Tree3"]
+texture = ExtResource( 34 )
+flip_h = true
+
+[node name="Tree4" type="StaticBody2D" parent="YSort"]
+position = Vector2( 116, -114 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree4"]
+position = Vector2( 0, 8 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Tree4"]
+texture = ExtResource( 24 )
+flip_h = true
+
+[node name="Tree5" type="StaticBody2D" parent="YSort"]
+position = Vector2( -164, -100 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree5"]
+position = Vector2( 0, 7 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Tree5"]
+texture = ExtResource( 23 )
+flip_h = true
+
+[node name="Tree6" type="StaticBody2D" parent="YSort"]
+position = Vector2( 164, -100 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree6"]
+position = Vector2( 0, 7 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Tree6"]
+texture = ExtResource( 22 )
+flip_h = true
+
+[node name="Tree7" type="StaticBody2D" parent="YSort"]
+position = Vector2( -113, -1 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree7"]
+position = Vector2( 0, 7 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Tree7"]
+texture = ExtResource( 22 )
+flip_h = true
+
+[node name="Tree8" type="StaticBody2D" parent="YSort"]
+position = Vector2( 113, -2 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree8"]
+position = Vector2( 0, 7 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Tree8"]
+texture = ExtResource( 23 )
+flip_h = true
+
+[node name="TableFlower" type="StaticBody2D" parent="YSort"]
+position = Vector2( -72, -45 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/TableFlower"]
+position = Vector2( -0.5, 6 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="YSort/TableFlower"]
+texture = ExtResource( 38 )
+
+[node name="TableHomeButton" type="StaticBody2D" parent="YSort"]
+position = Vector2( 0, -45 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/TableHomeButton"]
+position = Vector2( -0.5, 5.5 )
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="YSort/TableHomeButton"]
+position = Vector2( 0, 2 )
+texture = ExtResource( 39 )
+
+[node name="TextureButton" type="TextureButton" parent="YSort/TableHomeButton"]
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 8.0
+margin_bottom = 8.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 17 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HLetter" type="Sprite" parent="YSort/TableHomeButton/TextureButton"]
+position = Vector2( 8, 7 )
+scale = Vector2( 0.800001, 0.668869 )
+texture = ExtResource( 14 )
+
+[node name="LableLight2d2" type="Light2D" parent="YSort/TableHomeButton/TextureButton"]
+visible = false
+light_mask = 2
+position = Vector2( 8, 8 )
+scale = Vector2( 1.00974, 1 )
+texture = ExtResource( 13 )
+energy = 0.8
+
+[node name="TableBooks" type="StaticBody2D" parent="YSort"]
+position = Vector2( 72, -45 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/TableBooks"]
+position = Vector2( -0.5, 5 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="YSort/TableBooks"]
+texture = ExtResource( 40 )
+
+[node name="Chair1" type="StaticBody2D" parent="YSort"]
+position = Vector2( -94, -42 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Chair1"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Chair1"]
+texture = ExtResource( 21 )
+flip_h = true
+
+[node name="Chair2" type="StaticBody2D" parent="YSort"]
+position = Vector2( -50, -42 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Chair2"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Chair2"]
+texture = ExtResource( 21 )
+
+[node name="Chair3" type="StaticBody2D" parent="YSort"]
+position = Vector2( -23, -42 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Chair3"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Chair3"]
+texture = ExtResource( 21 )
+flip_h = true
+
+[node name="Chair4" type="StaticBody2D" parent="YSort"]
+position = Vector2( 23, -42 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Chair4"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Chair4"]
+texture = ExtResource( 21 )
+
+[node name="Chair5" type="StaticBody2D" parent="YSort"]
+position = Vector2( 50, -42 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Chair5"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Chair5"]
+texture = ExtResource( 21 )
+flip_h = true
+
+[node name="Chair6" type="StaticBody2D" parent="YSort"]
+position = Vector2( 94, -43 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Chair6"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Chair6"]
+texture = ExtResource( 21 )
+
+[node name="Sofa1" type="StaticBody2D" parent="YSort"]
+position = Vector2( -176, -66 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Sofa1"]
+position = Vector2( 2, 5 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Sofa1"]
+position = Vector2( 2, 0 )
+texture = ExtResource( 26 )
+
+[node name="Sofa2" type="StaticBody2D" parent="YSort"]
+position = Vector2( -176, -23 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Sofa2"]
+position = Vector2( 2, 5 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Sofa2"]
+position = Vector2( 2, 0 )
+texture = ExtResource( 26 )
+
+[node name="Sofa3" type="StaticBody2D" parent="YSort"]
+position = Vector2( 172, -66 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Sofa3"]
+position = Vector2( 2, 5 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Sofa3"]
+position = Vector2( 2, 0 )
+texture = ExtResource( 26 )
+flip_h = true
+
+[node name="Sofa4" type="StaticBody2D" parent="YSort"]
+position = Vector2( 172, -23 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Sofa4"]
+position = Vector2( 2, 5 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Sofa4"]
+position = Vector2( 2, 0 )
+texture = ExtResource( 26 )
+flip_h = true
+
+[node name="TableLong1" type="StaticBody2D" parent="YSort"]
+position = Vector2( -154, -61 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/TableLong1"]
+position = Vector2( 1.25, 2.5 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="YSort/TableLong1"]
+position = Vector2( 2, 0 )
+texture = ExtResource( 43 )
+
+[node name="TableLong2" type="StaticBody2D" parent="YSort"]
+position = Vector2( -154, -18 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/TableLong2"]
+position = Vector2( 1.25, 2.5 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="YSort/TableLong2"]
+position = Vector2( 2, 0 )
+texture = ExtResource( 43 )
+
+[node name="TableLong3" type="StaticBody2D" parent="YSort"]
+position = Vector2( 150, -61 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/TableLong3"]
+position = Vector2( 1.25, 2.5 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="YSort/TableLong3"]
+position = Vector2( 2, 0 )
+texture = ExtResource( 43 )
+
+[node name="TableLong4" type="StaticBody2D" parent="YSort"]
+position = Vector2( 150, -18 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/TableLong4"]
+position = Vector2( 1.25, 2.5 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="YSort/TableLong4"]
+position = Vector2( 2, 0 )
+texture = ExtResource( 43 )
+
+[node name="SideTable1" type="StaticBody2D" parent="YSort"]
+position = Vector2( -174, -52 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SideTable1"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/SideTable1"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 27 )
+
+[node name="Sprite2" type="Sprite" parent="YSort/SideTable1"]
+position = Vector2( 0, -3 )
+texture = ExtResource( 29 )
+
+[node name="SideTable2" type="StaticBody2D" parent="YSort"]
+position = Vector2( -174, -9 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SideTable2"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/SideTable2"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 27 )
+
+[node name="Sprite2" type="Sprite" parent="YSort/SideTable2"]
+position = Vector2( 0, -3 )
+texture = ExtResource( 28 )
+
+[node name="SideTable3" type="StaticBody2D" parent="YSort"]
+position = Vector2( 174, -52 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SideTable3"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/SideTable3"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 27 )
+
+[node name="Sprite2" type="Sprite" parent="YSort/SideTable3"]
+position = Vector2( 0, -3 )
+texture = ExtResource( 29 )
+flip_h = true
+
+[node name="SideTable4" type="StaticBody2D" parent="YSort"]
+position = Vector2( 174, -9 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SideTable4"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/SideTable4"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 27 )
+
+[node name="Sprite2" type="Sprite" parent="YSort/SideTable4"]
+position = Vector2( 0, -3 )
+texture = ExtResource( 28 )
+flip_h = true
+
+[node name="Wizzard" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 25, -142 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Wizzard"]
+position = Vector2( -1, 9 )
+shape = SubResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Wizzard"]
+frames = SubResource( 16 )
+animation = "Idle"
+flip_h = true
+
+[node name="Princess" type="KinematicBody2D" parent="YSort"]
+position = Vector2( -96, -87 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Princess"]
+frames = SubResource( 10 )
+animation = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Princess"]
+position = Vector2( 0, 10 )
+shape = SubResource( 11 )
+
+[node name="Prince" type="KinematicBody2D" parent="YSort"]
+position = Vector2( -73, -90 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Prince"]
+position = Vector2( 0, 1 )
+frames = SubResource( 12 )
+animation = "Idle"
+frame = 2
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Prince"]
+position = Vector2( 0, 10 )
+shape = SubResource( 11 )
+
+[node name="Lizard" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 94, -5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Lizard"]
+position = Vector2( 0, 9 )
+shape = SubResource( 13 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Lizard"]
+frames = SubResource( 14 )
+animation = "Idle"
+
+[node name="PlayerEnd" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 0, -90 )
+collision_mask = 57
+
+[node name="Level" type="Node2D" parent="YSort/PlayerEnd"]
+position = Vector2( -40, -22 )
+
+[node name="C" type="Sprite" parent="YSort/PlayerEnd/Level"]
+position = Vector2( 12, -43 )
+texture = ExtResource( 3 )
+hframes = 10
+vframes = 5
+frame = 12
+
+[node name="Light2D" type="Light2D" parent="YSort/PlayerEnd/Level/C"]
+texture = ExtResource( 10 )
+energy = 0.7
+
+[node name="O" type="Sprite" parent="YSort/PlayerEnd/Level"]
+position = Vector2( 20, -43 )
+texture = ExtResource( 3 )
+hframes = 10
+vframes = 5
+frame = 24
+
+[node name="Light2D" type="Light2D" parent="YSort/PlayerEnd/Level/O"]
+texture = ExtResource( 9 )
+energy = 0.7
+
+[node name="N" type="Sprite" parent="YSort/PlayerEnd/Level"]
+position = Vector2( 28, -43 )
+texture = ExtResource( 3 )
+hframes = 10
+vframes = 5
+frame = 23
+
+[node name="Light2D" type="Light2D" parent="YSort/PlayerEnd/Level/N"]
+texture = ExtResource( 7 )
+energy = 0.7
+
+[node name="G" type="Sprite" parent="YSort/PlayerEnd/Level"]
+position = Vector2( 36, -43 )
+texture = ExtResource( 3 )
+hframes = 10
+vframes = 5
+frame = 16
+
+[node name="Light2D" type="Light2D" parent="YSort/PlayerEnd/Level/G"]
+texture = ExtResource( 5 )
+energy = 0.7
+
+[node name="R" type="Sprite" parent="YSort/PlayerEnd/Level"]
+position = Vector2( 44, -43 )
+texture = ExtResource( 3 )
+hframes = 10
+vframes = 5
+frame = 27
+
+[node name="Light2D" type="Light2D" parent="YSort/PlayerEnd/Level/R"]
+texture = ExtResource( 6 )
+energy = 0.7
+
+[node name="A" type="Sprite" parent="YSort/PlayerEnd/Level"]
+position = Vector2( 52, -43 )
+texture = ExtResource( 3 )
+hframes = 10
+vframes = 5
+frame = 10
+
+[node name="Light2D" type="Light2D" parent="YSort/PlayerEnd/Level/A"]
+texture = ExtResource( 8 )
+energy = 0.7
+
+[node name="T" type="Sprite" parent="YSort/PlayerEnd/Level"]
+position = Vector2( 60, -43 )
+texture = ExtResource( 3 )
+hframes = 10
+vframes = 5
+frame = 29
+
+[node name="Light2D" type="Light2D" parent="YSort/PlayerEnd/Level/T"]
+texture = ExtResource( 4 )
+energy = 0.7
+
+[node name="S" type="Sprite" parent="YSort/PlayerEnd/Level"]
+position = Vector2( 68, -43 )
+texture = ExtResource( 3 )
+hframes = 10
+vframes = 5
+frame = 28
+
+[node name="Light2D" type="Light2D" parent="YSort/PlayerEnd/Level/S"]
+texture = ExtResource( 11 )
+energy = 0.7
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+light_mask = 2
+color = Color( 0.380392, 0.380392, 0.380392, 1 )
+
+[node name="WinSound" parent="." instance=ExtResource( 60 )]
+
+[node name="ButtonSound" parent="." instance=ExtResource( 61 )]
+
+[node name="EndingSound" parent="." instance=ExtResource( 62 )]
+
+[connection signal="button_down" from="YSort/TableHomeButton/TextureButton" to="." method="_on_TextureButton_button_down"]
+[connection signal="pressed" from="YSort/TableHomeButton/TextureButton" to="." method="_on_TextureButton_pressed"]

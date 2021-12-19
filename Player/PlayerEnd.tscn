@@ -1,0 +1,129 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Player/Run/elf_m_run_anim_f0.png" type="Texture" id=1]
+[ext_resource path="res://Player/Run/elf_m_run_anim_f1.png" type="Texture" id=2]
+[ext_resource path="res://Player/Idle/elf_m_idle_anim_f2.png" type="Texture" id=3]
+[ext_resource path="res://Player/Idle/elf_m_idle_anim_f0.png" type="Texture" id=4]
+[ext_resource path="res://Player/Run/elf_m_run_anim_f2.png" type="Texture" id=5]
+[ext_resource path="res://Player/Run/elf_m_run_anim_f3.png" type="Texture" id=6]
+[ext_resource path="res://Player/Idle/elf_m_idle_anim_f3.png" type="Texture" id=7]
+[ext_resource path="res://Player/Idle/elf_m_idle_anim_f1.png" type="Texture" id=8]
+[ext_resource path="res://Player/PlayerEnd.gd" type="Script" id=9]
+[ext_resource path="res://Player/light.png" type="Texture" id=10]
+[ext_resource path="res://Player/Hit/elf_m_hit_anim_f0.png" type="Texture" id=12]
+[ext_resource path="res://Bullet/Bullet.png" type="Texture" id=24]
+[ext_resource path="res://Decorate/TextLabel.png" type="Texture" id=25]
+[ext_resource path="res://Decorate/upheavtt.ttf" type="DynamicFontData" id=26]
+[ext_resource path="res://Decorate/fonts.png" type="Texture" id=27]
+[ext_resource path="res://Decorate/fontlight.png" type="Texture" id=28]
+[ext_resource path="res://Decorate/BulletLight.png" type="Texture" id=29]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Hit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 4.0
+height = 2.0
+
+[sub_resource type="DynamicFont" id=6]
+size = 10
+font_data = ExtResource( 26 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 6.0
+height = 4.0
+
+[node name="PlayerEnd" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 56
+script = ExtResource( 9 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 10 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0, 4 )
+scale = Vector2( 0.183317, 0.183317 )
+texture = ExtResource( 10 )
+color = Color( 0.784314, 0.784314, 0.784314, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -1, 1 )
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
+[node name="BulletIcon" type="Sprite" parent="."]
+visible = false
+position = Vector2( -120, -56 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 24 )
+
+[node name="LableLight2d3" type="Light2D" parent="BulletIcon"]
+position = Vector2( -9.05991e-06, 1.37091e-05 )
+texture = ExtResource( 29 )
+energy = 0.8
+
+[node name="BulletNumber" type="Sprite" parent="."]
+visible = false
+position = Vector2( -111, -55 )
+scale = Vector2( 0.785714, 0.785714 )
+texture = ExtResource( 27 )
+hframes = 10
+vframes = 5
+
+[node name="LableLight2d2" type="Light2D" parent="BulletNumber"]
+position = Vector2( 1.11461e-05, 3.27826e-06 )
+scale = Vector2( 0.727274, 0.727272 )
+texture = ExtResource( 28 )
+energy = 0.8
+
+[node name="TextLabel" type="Sprite" parent="."]
+visible = false
+position = Vector2( -111, -53 )
+texture = ExtResource( 25 )
+
+[node name="LableLight2d" type="Light2D" parent="TextLabel"]
+texture = ExtResource( 25 )
+energy = 0.7
+
+[node name="Label" type="Label" parent="TextLabel"]
+visible = false
+margin_left = -1.0
+margin_top = -5.0
+margin_right = 39.0
+margin_bottom = 10.0
+custom_colors/font_color = Color( 0.352941, 0.262745, 0.262745, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+position = Vector2( 0, 9 )
+shape = SubResource( 3 )
+
+[connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_CollisionShape2D_tree_entered"]

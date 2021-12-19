@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://GreenMan/Heart/Heart1.png" type="Texture" id=1]
+[ext_resource path="res://GreenMan/Heart/Heart2.png" type="Texture" id=2]
+[ext_resource path="res://TreeMan/Idle/Ent_Idle_1.png" type="Texture" id=3]
+[ext_resource path="res://TreeMan/Idle/Ent_Idle_2.png" type="Texture" id=4]
+[ext_resource path="res://TreeMan/Idle/Ent_Idle_3.png" type="Texture" id=5]
+[ext_resource path="res://TreeMan/Idle/Ent_Idle_4.png" type="Texture" id=6]
+[ext_resource path="res://TreeMan/TreeMan.gd" type="Script" id=7]
+[ext_resource path="res://Audio/HitSound.tscn" type="PackedScene" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Heart",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.0
+height = 6.0
+
+[sub_resource type="CapsuleShape2D" id=4]
+height = 8.0
+
+[node name="TreeMan" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 11
+script = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 1 )
+frames = SubResource( 1 )
+animation = "Idle"
+
+[node name="HeartAnimatedtSprite1" type="AnimatedSprite" parent="."]
+position = Vector2( 8.75, -16.5 )
+scale = Vector2( 0.59375, 0.5625 )
+frames = SubResource( 5 )
+animation = "Heart"
+
+[node name="HeartAnimatedtSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( -0.25, -16.5 )
+scale = Vector2( 0.59375, 0.5625 )
+frames = SubResource( 5 )
+animation = "Heart"
+
+[node name="HeartAnimatedtSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( -9.25, -16.5 )
+scale = Vector2( 0.59375, 0.5625 )
+frames = SubResource( 5 )
+animation = "Heart"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 3 )
+shape = SubResource( 2 )
+
+[node name="PlayerHit" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHit"]
+light_mask = 0
+position = Vector2( 0, 3 )
+shape = SubResource( 4 )
+
+[node name="HitSound" parent="." instance=ExtResource( 8 )]
+
+[connection signal="body_entered" from="PlayerHit" to="." method="_on_PlayerHit_body_entered"]

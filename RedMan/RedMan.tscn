@@ -1,0 +1,102 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://RedMan/RedMan.gd" type="Script" id=1]
+[ext_resource path="res://RedMan/Run/chort_run_anim_f0.png" type="Texture" id=2]
+[ext_resource path="res://RedMan/Idle/chort_idle_anim_f3.png" type="Texture" id=3]
+[ext_resource path="res://RedMan/Idle/chort_idle_anim_f2.png" type="Texture" id=4]
+[ext_resource path="res://RedMan/Run/chort_run_anim_f1.png" type="Texture" id=5]
+[ext_resource path="res://RedMan/Idle/chort_idle_anim_f0.png" type="Texture" id=6]
+[ext_resource path="res://GreenMan/Heart/Heart1.png" type="Texture" id=7]
+[ext_resource path="res://GreenMan/Heart/Heart2.png" type="Texture" id=8]
+[ext_resource path="res://RedMan/Idle/chort_idle_anim_f1.png" type="Texture" id=9]
+[ext_resource path="res://RedMan/Run/chort_run_anim_f2.png" type="Texture" id=10]
+[ext_resource path="res://RedMan/Run/chort_run_anim_f3.png" type="Texture" id=11]
+[ext_resource path="res://Audio/HitSound.tscn" type="PackedScene" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Heart",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 6.0
+height = 4.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 188.043
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 8.0
+height = 4.0
+
+[node name="RedMan" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 11
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Idle"
+
+[node name="HeartAnimatedtSprite1" type="AnimatedSprite" parent="."]
+position = Vector2( 9, -11 )
+scale = Vector2( 0.59375, 0.5625 )
+frames = SubResource( 5 )
+animation = "Heart"
+
+[node name="HeartAnimatedtSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -11 )
+scale = Vector2( 0.59375, 0.5625 )
+frames = SubResource( 5 )
+animation = "Heart"
+
+[node name="HeartAnimatedtSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( -9, -11 )
+scale = Vector2( 0.59375, 0.5625 )
+frames = SubResource( 5 )
+animation = "Heart"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 3 )
+shape = SubResource( 2 )
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+visible = false
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+modulate = Color( 1, 0.984314, 0.964706, 1 )
+position = Vector2( 0, 3 )
+shape = SubResource( 3 )
+
+[node name="PlayerHit" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHit"]
+light_mask = 0
+position = Vector2( 0, 3 )
+shape = SubResource( 4 )
+
+[node name="HitSound" parent="." instance=ExtResource( 12 )]
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_PlayerDetector_body_exited"]
+[connection signal="body_entered" from="PlayerHit" to="." method="_on_PlayerHit_body_entered"]
